@@ -1,0 +1,12 @@
+---
+title: Genghis, the single-file MongoDB admin app.
+---
+<nav>
+  <a href="">Download</a>
+</nav>
+
+<section id="screenshots">
+  <% @items.select{|i| i.identifier =~ /^\/screenshots\/./}.each do |screen| %>
+    <span class="screenshot"><img src="<%= screen.path %>"></span>
+  <% end %>
+</section>

@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+
+compile '/CNAME/' do; end
+
+compile '/script/' do
+  filter :erb
+  filter :uglify_js, :copyright => false
+end
+
+compile '/script/*' do; end
+
+compile '/style/' do
+  filter :less
+  filter :rainpress
+end
+
+compile '/style/*' do; end
+
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    filter :erb
+    filter :kramdown if ['markdown', 'md'].include? item[:extension]
+    layout 'default'
+  end
+end
+
+route '/CNAME/' do
+  '/CNAME'
+end
+
+route '/script/' do
+  '/script.js'
+end
+
+route '/script/*' do; end
+
+route '/style/' do
+  '/style.css'
+end
+
+route '/style/*' do; end
+
+route '*' do
+  if item.binary?
+    # Write item with identifier /foo/ to /foo.ext
+    item.identifier.chop + '.' + item[:extension]
+  else
+    # Write item with identifier /foo/ to /foo/index.html
+    item.identifier + 'index.html'
+  end
+end
+
+layout '*', :erb

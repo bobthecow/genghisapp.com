@@ -1,0 +1,25 @@
+<%= @items.find{|i| i.identifier == '/script/jquery/'}.compiled_content %>
+<%= @items.find{|i| i.identifier == '/script/ba-throttle-debounce/'}.compiled_content %>
+<%= @items.find{|i| i.identifier == '/script/bigtext/'}.compiled_content %>
+<%= @items.find{|i| i.identifier == '/script/fittext/'}.compiled_content %>
+
+jQuery(function() {
+  var s = $('#screenshots .screenshot');
+
+  // preload images
+  s.each(function(e) {
+    new Image($(e).find('img').attr('src'));
+  })
+
+  // start slideshow
+  setInterval(function() {
+    var last = s.eq(Math.floor(Math.random()*s.size()));
+    s.css({'zIndex': 1});
+    last.css({'zIndex': 5}).fadeIn(600);
+    setTimeout(function() { s.not(last).fadeOut(); }, 1000);
+  }, 5000);
+
+  // and embiggen a few things
+  $('header').bigtext({childSelector: '> *'});
+  $('.screenshot').fitText(5);
+});
