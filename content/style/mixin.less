@@ -4,8 +4,36 @@
           border-radius: @radius;
 }
 
+.border-top-radius (@radius: 2px) {
+  -webkit-border-top-right-radius: @radius;
+      -moz-border-radius-topright: @radius;
+          border-top-right-radius: @radius;
+   -webkit-border-top-left-radius: @radius;
+       -moz-border-radius-topleft: @radius;
+           border-top-left-radius: @radius;
+}
+
+.border-bottom-radius (@radius: 2px) {
+  -webkit-border-bottom-right-radius: @radius;
+      -moz-border-radius-bottomright: @radius;
+          border-bottom-right-radius: @radius;
+   -webkit-border-bottom-left-radius: @radius;
+       -moz-border-radius-bottomleft: @radius;
+           border-bottom-left-radius: @radius;
+}
+
 .vertical-gradient (@startColor: #555, @endColor: #333) {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
-  background-image: -webkit-linear-gradient(@startColor, @endColor);
-  background-image: -moz-linear-gradient(@startColor, @endColor);
+  background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor)); // Konqueror
+  background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+  background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @startColor), color-stop(100%, @endColor)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+  background-image: linear-gradient(top, @startColor, @endColor); // The standard
+}
+
+.drop-shadow (@x-axis: 0, @y-axis: 1px, @blur: 15px, @alpha: 0.2) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0,0,0,@alpha), 0 0 1px rgba(0,0,0,@alpha*1.5);
+     -moz-box-shadow: @x-axis @y-axis @blur rgba(0,0,0,@alpha), 0 0 1px rgba(0,0,0,@alpha*1.5);
+          box-shadow: @x-axis @y-axis @blur rgba(0,0,0,@alpha), 0 0 1px rgba(0,0,0,@alpha*1.5);
 }

@@ -91,13 +91,14 @@ section {
 
 .screenshot {
   .border-radius(5px);
+  .drop-shadow;
   margin-top: @gutter;
   margin-bottom: @gutter;
-  box-shadow: 0 0 15px rgba(0,0,0,.2), 0 0 1px rgba(0,0,0,.3);
   display: inline-block;
   overflow: hidden;
 
   &:before {
+    .border-top-radius(4px);
     display: block;
     content: '\2295 \2297';
     text-align: right;
@@ -113,6 +114,7 @@ section {
   }
 
   > img {
+    .border-bottom-radius(4px);
     display: block;
     max-width: 100%;
   }
