@@ -16,6 +16,12 @@ a:hover, a:active {
   text-decoration: underline;
 }
 
+.tinytext() {
+  font-size: 13px;
+  line-height: 1;
+  color: @light-grey;
+}
+
 header {
   margin: 0 auto;
   padding: @gutter 25%;
@@ -44,6 +50,7 @@ nav, section {
 nav {
   text-align: center;
   a {
+    position: relative;
     display: inline-block;
     font-weight: bold;
     font-size: 200%;
@@ -62,6 +69,16 @@ nav {
     &:active {
       background-color: @black;
       text-decoration: none;
+    }
+    &:after {
+      .tinytext;
+      padding-top: 10px;
+      display: block;
+      content: attr(title);
+      position: absolute;
+      left: 50%;
+      width: 8em;
+      margin-left: -4em;
     }
   }
 }
@@ -127,9 +144,7 @@ footer {
   left: 0;
   right: 0;
 
-  font-size: 80%;
-  line-height: 1;
-  color: @light-grey;
+  .tinytext;
   text-align: center;
   padding-bottom: .25*@gutter;
   background-color: @bg;
