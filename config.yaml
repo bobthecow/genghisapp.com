@@ -20,3 +20,7 @@ deploy:
     dst_remote: origin
     dst_branch: gh-pages
     src_branch: master
+
+prune:
+  auto_prune: true
+  exclude: [ '.git', '.hg', '.svn', 'CVS' ]

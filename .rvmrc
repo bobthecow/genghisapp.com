@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rvm 1.9.2@genghisapp --create
+
+[[ -z `gem list | grep bundler` ]] && gem install bundler
+bundle | grep -v 'Using' | grep -v 'complete' | sed '/^$/d'
