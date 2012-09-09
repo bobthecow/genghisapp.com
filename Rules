@@ -14,6 +14,11 @@ compile '/style/' do
   filter :rainpress
 end
 
+compile '/ie/' do
+  filter :less
+  filter :rainpress
+end
+
 compile '/style/*' do; end
 
 compile '*' do
@@ -38,10 +43,18 @@ route '/script/' do
   '/script.js'
 end
 
+route '/script/html5/' do
+  '/script/html5.js'
+end
+
 route '/script/*' do; end
 
 route '/style/' do
   '/style.css'
+end
+
+route '/ie/' do
+  '/ie.css'
 end
 
 route '/style/*' do; end

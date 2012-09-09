@@ -1,0 +1,118 @@
+@import 'style/mixins';
+
+@mongoGreen: #1d8835;
+@headerBg:   #1c1c1c;
+
+@fg:         #111;
+@bg:         #f2f2f2;
+
+@black:      #111;
+@lightBlack: #333;
+@grey:       #666;
+@lightGrey:  #888;
+
+@px:   2.5px;
+@1px:  1*@px;
+@2px:  2*@px;
+@3px:  3*@px;
+@4px:  4*@px;
+@6px:  6*@px;
+@8px:  8*@px;
+@10px: 10*@px;
+@12px: 12*@px;
+@16px: 16*@px;
+@24px: 24*@px;
+@32px: 32*@px;
+@48px: 48*@px;
+@72px: 72*@px;
+
+
+
+html {
+  font-size: 19px;
+}
+
+body {
+  font-size: @6px;
+  text-align: center;
+  padding-bottom: @48px;
+}
+
+header {
+  text-shadow: 0 @1px @3px rgba(0,0,0,.4), 0 0 @24px rgba(0,0,0,.075);
+  padding-top: @24px;
+  h1 {
+    font-size: @72px;
+  }
+  h2 {
+    font-size: @16px;
+  }
+}
+
+nav {
+  margin: @24px 0;
+  li {
+    padding: 0 @8px;
+    &:first-child {
+      margin-bottom: @12px;
+    }
+  }
+}
+
+a.download {
+  .border-radius(@16px);
+  padding:     @6px @32px @10px;
+  font-size:   @16px;
+  line-height: @16px;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2), 0 -1px 0 black, 0 0 @8px rgba(0,0,0,.2);
+  .box-shadow(~"inset 0 @{8px}rem @{8px}rem rgba(255,255,255,.125), 0 -1px 0 black, 0 1px 0 rgba(255,255,255,.25), 0 @{1px}rem @{3px}rem rgba(0,0,0,.4), 0 0 @{24px}rem rgba(0,0,0,.075), 0 0 @{8px}rem rgba(0,0,0,.2)");
+  &:active {
+    .box-shadow(~"inset 0 @{4px}rem @{8px}rem rgba(0,0,0,.25), 0 -1px 0 black, 0 1px 0 rgba(255,255,255,.25), 0 @{1px}rem @{3px}rem rgba(0,0,0,.4), 0 0 @{24px}rem rgba(0,0,0,.075), 0 0 @{8px}rem rgba(0,0,0,.2)");
+  }
+  &:after {
+    font-size: @4px;
+    margin-top: -@4px;
+  }
+}
+
+#screenshots {
+  li {
+    margin:  @12px;
+    width: 240*@px;
+    .border-radius(@3px);
+    .box-shadow(0 @8px @8px rgba(0,0,0,.75), 0 0 @24px rgba(0,0,0,.75);
+    &:before {
+      .border-top-radius(@2px);
+      font-size:   @6px;
+      letter-spacing: @3px;
+      padding: 0 @3px;
+    }
+    img {
+      .border-bottom-radius(@2px);
+    }
+  }
+}
+
+html.item-404 {
+  section#main {
+    font-size: @8px;
+    padding-bottom: @48px;
+    h1 {
+      font-size: @72px;
+      margin: @24px 0 @12px;
+    }
+  }
+}
+
+#share {
+  padding: @8px @16px;
+  margin-bottom: @4px;
+}
+
+footer {
+  padding: 0 0 @4px;
+  .box-shadow(~"0 0 @{12px}rem rgba(0,0,0,.5)");
+  p {
+    margin: @8px 0 @4px;
+  }
+}
