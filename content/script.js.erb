@@ -1,3 +1,5 @@
+<%= @items.find{|i| i.identifier == '/script/jquery/'}.compiled_content %>
+
 setTimeout(function() {
   // Twitter
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
@@ -10,7 +12,7 @@ setTimeout(function() {
   })();
 
   // Facebook
-  $('body').append('<div id="fb-root"></div>');
+  jQuery('body').append('<div id="fb-root"></div>');
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -19,3 +21,9 @@ setTimeout(function() {
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 }, 0);
+
+jQuery(function($) {
+  $('nav input')
+    .keydown(function(e) { e.preventDefault(); })     // no changey
+    .click(function(e) { $(this).select(); });        // select text on click
+});

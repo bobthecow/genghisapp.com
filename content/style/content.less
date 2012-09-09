@@ -72,6 +72,34 @@ nav {
     &:first-child {
       display: block;
       margin-bottom: @12px;
+      span {
+        display: block;
+        margin:  @8px 0;
+      }
+    }
+  }
+  input {
+    display: inline-block;
+    background-color: rgba(0,0,0,.33);
+    .box-shadow(inset 0 @6px @6px black, 0 0 @24px rgba(0,0,0,.075));
+    border: 1px solid #333;
+    .border-radius(@2px);
+    color: rgba(255,255,255,.5);
+    display: block;
+    margin: 0 auto;
+    width: 120*@px;
+    padding: @4px @8px;
+    font-size: @8px;
+    text-align: center;
+    .transition(color .2s linear);
+    &:hover, &:focus {
+      color: rgba(255,255,255,1);
+    }
+    &:focus {
+      border-color: fadeout(@mongoGreen, 20%);
+      outline: 0;
+      outline: thin dotted \9; /* IE6-9 */
+      .box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 @8px fadeout(@mongoGreen, 40%));
     }
   }
   a {
@@ -84,6 +112,7 @@ nav {
     }
   }
 }
+
 
 a.download {
   #gradient > .vertical(lighten(@mongoGreen, 5%), darken(@mongoGreen, 10%));
@@ -247,6 +276,11 @@ html {
 @media screen and (max-width: 600px)  {
   html { font-size: 12px;  }
   body { font-size: @12px; }
+  nav input {
+    font-size: @12px;
+    width: 240*@px;
+    padding: @8px 0;
+  }
   a.download {
     margin: auto;
     width: 240*@px;
