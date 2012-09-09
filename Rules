@@ -1,25 +1,46 @@
 #!/usr/bin/env ruby
 
+# passthrough '/CNAME/'  ## Currently borken
 compile '/CNAME/' do; end
+route '/CNAME/' do
+  '/CNAME'
+end
 
 compile '/script/' do
   filter :erb
   filter :uglify_js, :copyright => false
 end
+route '/script/' do
+  '/script.js'
+end
+
+passthrough '/html5/'
 
 compile '/script/*' do; end
+route '/script/*' do; end
 
 compile '/style/' do
   filter :less
   filter :rainpress
+end
+route '/style/' do
+  '/style.css'
 end
 
 compile '/ie/' do
   filter :less
   filter :rainpress
 end
+route '/ie/' do
+  '/ie.css'
+end
 
 compile '/style/*' do; end
+route '/style/*' do; end
+
+route '/404/' do
+  '/404.html'
+end
 
 compile '*' do
   if item.binary?
@@ -30,34 +51,6 @@ compile '*' do
     layout 'default'
   end
 end
-
-route '/404/' do
-  '/404.html'
-end
-
-route '/CNAME/' do
-  '/CNAME'
-end
-
-route '/script/' do
-  '/script.js'
-end
-
-route '/script/html5/' do
-  '/script/html5.js'
-end
-
-route '/script/*' do; end
-
-route '/style/' do
-  '/style.css'
-end
-
-route '/ie/' do
-  '/ie.css'
-end
-
-route '/style/*' do; end
 
 route '*' do
   if item.binary?
