@@ -63,4 +63,4 @@ for file in $DIR/*; do
     mv "$file" "${file/-clipped/}"
 done
 
-convert -resize 400x300 +dither -posterize 256 -delay 100 -loop 0 $DIR/*.png ./screenshots.gif
+convert -resize 400x300 +dither -posterize 256 -delay 100 -loop 0 $DIR/*.png $DIR/screenshots.gif

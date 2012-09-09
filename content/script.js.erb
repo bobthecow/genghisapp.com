@@ -1,25 +1,21 @@
-<%= @items.find{|i| i.identifier == '/script/jquery/'}.compiled_content %>
-<%= @items.find{|i| i.identifier == '/script/ba-throttle-debounce/'}.compiled_content %>
-<%= @items.find{|i| i.identifier == '/script/bigtext/'}.compiled_content %>
-<%= @items.find{|i| i.identifier == '/script/fittext/'}.compiled_content %>
+setTimeout(function() {
+  // Twitter
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
-jQuery(function() {
-  var s = $('#screenshots .screenshot');
+  // G+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
 
-  // preload images
-  s.each(function(e) {
-    new Image($(e).find('img').attr('src'));
-  })
-
-  // start slideshow
-  setInterval(function() {
-    var last = s.eq(Math.floor(Math.random()*s.size()));
-    s.css({'zIndex': 1});
-    last.css({'zIndex': 5}).fadeIn(600);
-    setTimeout(function() { s.not(last).fadeOut(); }, 1000);
-  }, 5000);
-
-  // and embiggen a few things
-  $('header').bigtext({childSelector: '> *'});
-  $('.screenshot').fitText(5);
-});
+  // Facebook
+  $('body').append('<div id="fb-root"></div>');
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=405358709531039";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+}, 0);
