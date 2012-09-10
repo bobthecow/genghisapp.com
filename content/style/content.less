@@ -287,9 +287,16 @@ html.item-404 {
   margin-bottom: @4px;
   background-color: darken(@bg, 3%);
   border-bottom: 1px solid darken(@bg, 15%);
-  .fb-like {
-    top: -3px;
+  > div {
+    display: inline-block;
+    &.github-fork    { margin-left: -10px; }
+    &.twitter-follow { margin-left: 2px;   }
+    &.twitter-share  { margin-left: 4px;   }
+    &.googleplus-one { margin-left: -4px;  }
+    &.facebook-like  { margin-left: -14px; }
   }
+  .fb-like { top: -1px; }
+  // Make the fallback links not ugly.
   a:link, a:visited {
     color: @lightGrey;
     font-size: 12px;

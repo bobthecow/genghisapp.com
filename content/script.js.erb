@@ -1,49 +1,14 @@
 <%= @items.find{|i| i.identifier == '/script/jquery/'}.compiled_content %>
-
-setTimeout(function() {
-  // Twitter
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-
-  // G+
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-
-  // Facebook
-  jQuery('body').append('<div id="fb-root"></div>');
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=405358709531039";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-}, 0);
-
-(function($) {
-  $.fn.shuffle = function() {
-    return this.each(function(){
-      var items = $(this).children();
-      return (items.length)
-        ? $(this).html($.shuffle(items))
-        : this;
-    });
-  }
-   
-  $.shuffle = function(arr) {
-    for(
-      var j, x, i = arr.length; i;
-      j = parseInt(Math.random() * i),
-      x = arr[--i], arr[i] = arr[j], arr[j] = x
-    );
-    return arr;
-  }
-})(jQuery);
+<%= @items.find{|i| i.identifier == '/script/jquery-shuffle/'}.compiled_content %>
+<%= @items.find{|i| i.identifier == '/script/socialite/'}.compiled_content %>
+<%= @items.find{|i| i.identifier == '/script/socialite-github/'}.compiled_content %>
 
 jQuery(function($) {
+  // shuffle the screenshots
   $('#screenshots').shuffle();
+
+  // load the sellout buttons
+  Socialite.load($('#share'));
 
   $('nav input')
     .keydown(function(e) { e.preventDefault(); })     // no changey
