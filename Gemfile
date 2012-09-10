@@ -11,3 +11,9 @@ gem 'rainpress'
 gem 'json'
 gem 'adsf'
 gem 'mime-types'
+
+group :development do
+  gem 'mongo'
+  gem 'pry'
+  gem 'faker'
+end
