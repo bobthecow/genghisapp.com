@@ -14,7 +14,10 @@ route '/script/' do
   '/script.js'
 end
 
-passthrough '/html5/'
+compile '/html5/' do; end
+route '/html5/' do
+  '/html5.js'
+end
 
 compile '/script/*' do; end
 route '/script/*' do; end
