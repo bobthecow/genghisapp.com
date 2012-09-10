@@ -25,4 +25,4 @@ prune:
   auto_prune: true
   exclude: [ '.git', '.hg', '.svn', 'CVS' ]
 
-genghis_version: 1.4.2
+genghis_version: 2.0.0
