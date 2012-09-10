@@ -1,0 +1,49 @@
+screenshots:
+  - url: 'http://genghis/'
+  - url: 'http://genghis/'
+    # clear out the welcome message:
+    before: |
+      app.router.navigate('/servers/localhost', true);
+      app.router.navigate('/', true);
+    actions:
+      - 'setTimeout(function() { $("#servers tr:first-child .databases.has-details").popover("show"); }, 100);'
+      - 'setTimeout(function() { $("a.keyboard-shortcuts").click(); }, 100);'
+  - url: 'http://genghis/servers/localhost'
+  - url: 'http://genghis/servers/localhost'
+    before: |
+      var dbs = $('#databases td:first-child a');
+      dbs.eq(Math.floor(Math.random() * dbs.length)).click();
+    actions:
+      - 'setTimeout(function() { $("header nav .dropdown.database").addClass("open"); }, 100)'
+      - 'setTimeout(function() { $("#databases tr:first-child button.destroy").click(); }, 100)'
+      - 'setTimeout(function() { $("#databases tr:first-child button.destroy").click(); $("div.appriseOuter .aButtons button:last-child").click(); }, 100)'
+  - url: 'http://genghis/servers/localhost'
+    before: |
+      var dbs = $('#databases td:first-child a');
+      dbs.eq(Math.floor(Math.random() * dbs.length)).click();
+      setTimeout(function() {
+        var colls = $('#collections td:first-child a');
+        colls.eq(Math.floor(Math.random() * colls.length)).click();
+        setTimeout(function() {
+          $("#documents article:first-child").find("button.edit, button.destroy").css("visibility", "visible");
+        }, 50);
+      }, 100);
+    actions:
+      - 'setTimeout(function(){ $("#documents article:first-child button.edit").click(); }, 200)'
+      - 'setTimeout(function(){ $("#documents article:first-child button.destroy").click(); }, 200)'
+      - 'setTimeout(function(){ $("button.add-document").eq(0).click(); }, 200)'
+      - 'setTimeout(function(){ app.selection.set("query", "{name:{$exists:true}}");}, 200)'
+      - 'setTimeout(function(){ app.selection.set("query", "{name:{$exists:true}}"); $(".grippie").click();}, 200)'
+
+mobile:
+  - url: 'http://genghis/'
+  - url: 'http://genghis/'
+    # clear out the welcome message:
+    before: |
+      app.router.navigate('/servers/localhost', true);
+      app.router.navigate('/', true);
+  - url: 'http://genghis/servers/localhost'
+  - url: 'http://genghis/servers/localhost'
+    before: |
+      var dbs = $('#databases td:first-child a');
+      dbs.eq(Math.floor(Math.random() * dbs.length)).click();
