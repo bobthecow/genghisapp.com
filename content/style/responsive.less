@@ -1,0 +1,92 @@
+// base size
+html {
+  font-size: 19px;
+  .transition(font-size .2s linear);
+}
+
+// resize-o-matic!
+//
+//     q = (7..24).map { |i| [(i - 1) * 50 + 1, ((i - 1) * 50 * 0.886).ceil + 1, i] }
+//     q.map do |w,h,f|
+//       "@media screen and (min-width: #{w}px) and (min-height: #{h}px) { html { font-size: #{f}px; } }"
+//     end
+//
+@media screen and (min-width: 1px)                             { html { font-size: 7px;  } }
+@media screen and (min-width: 351px)                           { html { font-size: 8px;  } }
+@media screen and (min-width: 401px)                           { html { font-size: 9px;  } }
+@media screen and (min-width: 451px)                           { html { font-size: 10px; } }
+@media screen and (min-width: 501px)                           { html { font-size: 11px; } }
+@media screen and (min-width: 551px)  and (min-height: 489px)  { html { font-size: 12px; } }
+@media screen and (min-width: 601px)  and (min-height: 533px)  { html { font-size: 13px; } }
+@media screen and (min-width: 651px)  and (min-height: 577px)  { html { font-size: 14px; } }
+@media screen and (min-width: 701px)  and (min-height: 622px)  { html { font-size: 15px; } }
+@media screen and (min-width: 751px)  and (min-height: 666px)  { html { font-size: 16px; } }
+@media screen and (min-width: 801px)  and (min-height: 710px)  { html { font-size: 17px; } }
+@media screen and (min-width: 851px)  and (min-height: 755px)  { html { font-size: 18px; } }
+@media screen and (min-width: 901px)  and (min-height: 799px)  { html { font-size: 19px; } }
+@media screen and (min-width: 951px)  and (min-height: 843px)  { html { font-size: 20px; } }
+@media screen and (min-width: 1001px) and (min-height: 887px)  { html { font-size: 21px; } }
+@media screen and (min-width: 1051px) and (min-height: 932px)  { html { font-size: 22px; } }
+@media screen and (min-width: 1101px) and (min-height: 976px)  { html { font-size: 23px; } }
+@media screen and (min-width: 1151px) and (min-height: 1020px) { html { font-size: 24px; } }
+
+// prevent body font from getting too small
+@media screen and (max-width:  800px) { body { font-size: @8px; } }
+@media screen and (max-height: 800px) { body { font-size: @8px; } }
+
+// provide a mobile optimized "single column" design
+@media screen and (max-width:  600px) {
+  body { font-size: @12px; }
+  nav input {
+    font-size: @12px;
+    width: 240*@px;
+    padding: @8px 0;
+  }
+  a.download {
+    margin: auto;
+    width: 240*@px;
+    display: block;
+    padding: @8px 0;
+    .border-radius(@4px);
+    &:after { display: none; }
+  }
+  html.item-404 {
+    section#main {
+      font-size: @12px;
+    }
+  }
+
+  #screenshots li.mobile {
+    width: 200*@px;
+    .border-radius(@32px);
+    padding-bottom: 64*@px;
+
+    .box-shadow(
+      0 0 0 @2px black,
+      0 0 0 @4px #a09f9d,
+      0 @8px @8px rgba(0,0,0,.75),
+      0 0 @24px rgba(0,0,0,.5)
+    );
+    &:before {
+      height: @4px;
+      width:  @16px;
+      top:    @24px;
+      margin-left: -@8px;
+      .border-radius(@8px);
+      border-width: @4px;
+    }
+    &:after {
+      height:        @32px;
+      width:         @32px;
+      margin-left:   -@16px;
+      bottom:        @16px;
+      border-radius: @16px;
+    }
+    img {
+      width:  184*@px;
+      margin: 52*@px @6px 0;
+      border: @2px solid black;
+    }
+  }
+}
+
