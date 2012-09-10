@@ -43,7 +43,7 @@
 DIR=./content/screenshots
 CMD="webkit2png --clipped --width=800 --height=600 --scale=1 --clipwidth=800 --clipheight=600 --dir=$DIR"
 
-rm $DIR/*
+rm $DIR/*.png $DIR/mobile/*.png
 
 $CMD -o 1  http://genghis/
 $CMD -o 2  --delay=1 --js='$("section#servers table tbody tr:first-child .databases.has-details").popover("show")' http://genghis/
@@ -59,7 +59,11 @@ $CMD -o 11 --delay=1 --js='$("section#documents article:first-child button.edit"
 $CMD -o 12 --delay=1 --js='$("section#documents article:first-child button.destroy").click()' http://genghis/servers/localhost/databases/et_ut/collections/at_voluptatem_sunt
 $CMD -o 13 --delay=1 --js='$("button.add-document").eq(0).click()' http://genghis
 
-for file in $DIR/*; do
+for file in $DIR/*.png; do
+    mv "$file" "${file/-clipped/}"
+done
+
+for file in $DIR/mobile/*.png; do
     mv "$file" "${file/-clipped/}"
 done
 
