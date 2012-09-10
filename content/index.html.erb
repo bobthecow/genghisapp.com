@@ -13,7 +13,7 @@ title: Genghis, the single-file MongoDB admin app.
 </nav>
 
 <ul id="screenshots">
-  <% @items.select{|i| i.identifier =~ /^\/screenshots\/./}.each do |screen| %>
-    <li><img src="<%= screen.path %>"></li>
+  <% screenshots.each do |screen| %>
+    <li<% if screen.identifier.include? "/mobile/" %> class="mobile"<% end %>><img src="<%= screen.path %>"></li>
   <% end %>
 </ul>
