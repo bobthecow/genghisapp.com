@@ -11,6 +11,6 @@ jQuery(function($) {
   Socialite.load($('#share'));
 
   $('nav input')
-    .keydown(function(e) { e.preventDefault(); })     // no changey
-    .click(function(e) { $(this).select(); });        // select text on click
+    .keydown(function(e) { $(this).text('gem install genghisapp'); })  // no changey
+    .click(function(e) { $(this).select(); });                         // select text on click
 });
