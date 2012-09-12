@@ -36,18 +36,18 @@ run do |opts, args|
     exit 1
   end
 
-  # $stderr.puts "In 10 seconds, we will delete #{dbs.length} databases — " + dbs.join(', ')
-  # $stderr.puts 'Hit ctrl+c to abort.'
-  # $stderr.puts
+  $stderr.puts "In 10 seconds, we will delete #{dbs.length} databases — " + dbs.join(', ')
+  $stderr.puts 'Hit ctrl+c to abort.'
+  $stderr.puts
 
-  # sleep 10
+  sleep 10
 
   $stderr.puts 'Hokey then.'
   $stderr.puts 'Don\'t say I didn\'t warn you.'
   $stderr.puts
 
   dbs.each do |name|
-    # sleep 2
+    sleep 1
     $stderr.puts '  Deleting ' + name
     conn.drop_database name
   end
