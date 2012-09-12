@@ -1,11 +1,10 @@
 text_extensions: [ 'css', 'erb', 'haml', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'php', 'rb', 'sass', 'scss', 'txt', 'xhtml', 'xml' ]
 output_dir: output
 index_filenames: [ 'index.html' ]
-enable_output_diff: false
+enable_output_diff: true
 
 data_sources:
-  -
-    type: filesystem_unified
+  - type: filesystem_unified
     items_root: /
     layouts_root: /
 
@@ -15,14 +14,8 @@ watcher:
   notify_on_compilation_success: true
   notify_on_compilation_failure: true
 
-deploy:
-  default:
-    dst_remote: origin
-    dst_branch: gh-pages
-    src_branch: master
-
 prune:
   auto_prune: true
-  exclude: [ '.git', '.hg', '.svn', 'CVS' ]
+  exclude: [ '.git' ]
 
 genghis_version: 2.0.0
