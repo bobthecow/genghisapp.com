@@ -18,4 +18,4 @@ prune:
   auto_prune: true
   exclude: [ '.git' ]
 
-genghis_version: 2.0.0
+genghis_version: 2.0.1
