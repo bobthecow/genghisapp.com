@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+preprocess do
+  get_genghis_version
+end
+
 # passthrough '/CNAME/'  ## Currently borken
 compile '/CNAME/' do; end
 route '/CNAME/' do
