@@ -15,5 +15,5 @@ watcher:
   notify_on_compilation_failure: true
 
 prune:
-  auto_prune: true
+  auto_prune: false
   exclude: [ '.git' ]
