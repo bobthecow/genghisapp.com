@@ -14,6 +14,7 @@ gem 'mime-types'
 
 group :development do
   gem 'mongo'
+  gem 'bson_ext', require: false
   gem 'pry'
   gem 'faker'
 end

@@ -4,6 +4,8 @@ GEM
     adsf (1.1.1)
       rack (>= 1.0.0)
     bson (1.7.0)
+    bson_ext (1.7.0)
+      bson (~> 1.7.0)
     coderay (1.0.8)
     colored (1.2)
     commonjs (0.2.6)
@@ -51,6 +53,7 @@ PLATFORMS
 
 DEPENDENCIES
   adsf
+  bson_ext
   faker
   json
   kramdown
