@@ -1,6 +1,6 @@
 screenshots:
-  - url: 'http://genghis/'
-  - url: 'http://genghis/'
+  - url: 'http://genghis.dev/'
+  - url: 'http://genghis.dev/'
     # clear out the welcome message:
     before: |
       app.router.navigate('/servers/localhost', true);
@@ -8,8 +8,8 @@ screenshots:
     actions:
       - 'setTimeout(function() { $("#servers tr:first-child .databases.has-details").popover("show"); }, 100);'
       - 'setTimeout(function() { $("a.keyboard-shortcuts").click(); }, 100);'
-  - url: 'http://genghis/servers/localhost'
-  - url: 'http://genghis/servers/localhost'
+  - url: 'http://genghis.dev/servers/localhost'
+  - url: 'http://genghis.dev/servers/localhost'
     before: |
       var dbs = $('#databases td:first-child a');
       dbs.eq(Math.floor(Math.random() * dbs.length)).click();
@@ -17,7 +17,7 @@ screenshots:
       - 'setTimeout(function() { $("header nav .dropdown.database").addClass("open"); }, 100)'
       - 'setTimeout(function() { $("#databases tr:first-child button.destroy").click(); }, 100)'
       - 'setTimeout(function() { $("#databases tr:first-child button.destroy").click(); $("div.appriseOuter .aButtons button:last-child").click(); }, 100)'
-  - url: 'http://genghis/servers/localhost'
+  - url: 'http://genghis.dev/servers/localhost'
     before: |
       var dbs = $('#databases td:first-child a');
       dbs.eq(Math.floor(Math.random() * dbs.length)).click();
@@ -36,14 +36,14 @@ screenshots:
       - 'setTimeout(function(){ app.selection.set("query", "{name:{$exists:true}}"); $(".grippie").click();}, 200)'
 
 mobile:
-  - url: 'http://genghis/'
-  - url: 'http://genghis/'
+  - url: 'http://genghis.dev/'
+  - url: 'http://genghis.dev/'
     # clear out the welcome message:
     before: |
       app.router.navigate('/servers/localhost', true);
       app.router.navigate('/', true);
-  - url: 'http://genghis/servers/localhost'
-  - url: 'http://genghis/servers/localhost'
+  - url: 'http://genghis.dev/servers/localhost'
+  - url: 'http://genghis.dev/servers/localhost'
     before: |
       var dbs = $('#databases td:first-child a');
       dbs.eq(Math.floor(Math.random() * dbs.length)).click();
