@@ -1,14 +1,10 @@
 #!/usr/bin/env ruby
 
 preprocess do
-  get_genghis_version
+  config[:genghis_version] = get_genghis_version
 end
 
-# passthrough '/CNAME/'  ## Currently borken
-compile '/CNAME/' do; end
-route '/CNAME/' do
-  '/CNAME'
-end
+passthrough '/CNAME/'
 
 compile '/script/' do
   filter :erb
@@ -48,6 +44,20 @@ route '/style/*' do; end
 route '/404/' do
   '/404.html'
 end
+
+compile '/changelog/' do
+  filter :erb
+  layout 'default'
+end
+route '/changelog/' do
+  '/changelog/index.html'
+end
+
+compile '/changelog/*' do
+  filter :kramdown
+  filter :github_issue_links, project: 'bobthecow/genghis'
+end
+route '/changelog/*' do; end
 
 compile '*' do
   if item.binary?

@@ -4,9 +4,10 @@ index_filenames: [ 'index.html' ]
 enable_output_diff: true
 
 data_sources:
-  - type:         filesystem_unified
-    items_root:   /
-    layouts_root: /
+  - type:       filesystem_unified
+    items_root: /
+  - type:       changelog
+    items_root: /changelog/
 
 watcher:
   dirs_to_watch:  [ 'content', 'layouts', 'lib' ]

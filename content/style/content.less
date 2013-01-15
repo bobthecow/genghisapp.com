@@ -57,7 +57,7 @@ html {
   }
 }
 
-header h1, footer p, html.item-404 section#main {
+header h1, footer p, html.item-404 section#main, html.item-changelog section#main h1 {
   font-family: "Rokkitt";
 }
 
@@ -98,6 +98,18 @@ header {
     font-family: 'Rokkitt';
     margin:    0;
     font-size: @72px;
+    a {
+      .transition(text-shadow .2s ease-in-out);
+      &:link, &:visited {
+        font-weight: bold;
+        color: #FFF;
+        text-decoration: none;
+      }
+      &:hover, &:active {
+        text-decoration: none;
+        text-shadow: 0 0 @8px fadeout(@mongoGreen, 40%);
+      }
+    }
   }
   h2 {
     margin: 0;
@@ -324,6 +336,78 @@ html.item-404 {
       text-decoration: underline;
       color: white;
     }
+  }
+}
+
+#changelog {
+  text-align: left;
+  width: 240*@px;
+  margin: @12px auto 0;
+  padding-bottom: @24px;
+
+  h3 {
+    margin: @16px 0 @8px;
+    color: @black;
+    font-size: @12px;
+    font-weight: bold;
+  }
+
+  p {
+    margin: @4px 0;
+  }
+
+  ul {
+    margin-left: @12px;
+  }
+
+  > ul {
+    margin: @8px 0 @8px @12px;
+  }
+
+  ul {
+    li {
+      margin: @3px 0;
+
+      &:before {
+        font-weight: bold;
+        font-size: 66%;
+        content: '\2605';
+        color: lighten(desaturate(@mongoGreen, 50%), 25%);
+        margin: 0 .5em 0 -1.5em;
+      }
+    }
+  }
+}
+
+html.item-changelog {
+  body {
+    padding-bottom: 0;
+  }
+
+  section#main {
+    margin-top: @24px;
+    background-color: #fff;
+    color: @lightBlack;
+
+    h1 {
+      text-align: left;
+      color: @grey;
+      font-size: @24px;
+      font-weight: bold;
+      width: 240*@px;
+      margin: 0 auto;
+      padding-top: @24px;
+    }
+  }
+
+  #share {
+    display: none;
+  }
+
+  footer {
+    position: inherit;
+    .box-shadow(none);
+    border-top-color: darken(@bg, 15%);
   }
 }
 

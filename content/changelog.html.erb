@@ -1,0 +1,13 @@
+---
+title: Genghis Changelog
+---
+<h1>Changelog</h1>
+
+<ul id="changelog">
+  <% changes.each do |version| %>
+    <li id="<%= version_hash(version[:version]) %>">
+      <h3>v<%= version[:version] %></h3>
+      <%= version.compiled_content %>
+    </li>
+  <% end %>
+</ul>
