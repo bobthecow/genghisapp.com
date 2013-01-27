@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+deploy_check :stale
+deploy_check :ilinks

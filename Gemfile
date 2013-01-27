@@ -11,6 +11,7 @@ gem 'rainpress'
 gem 'json'
 gem 'adsf'
 gem 'mime-types'
+gem 'nokogiri'
 
 group :development do
   gem 'mongo'
