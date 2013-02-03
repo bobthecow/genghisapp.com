@@ -21,6 +21,7 @@ GEM
     kramdown (0.14.2)
     less (2.2.2)
       commonjs (~> 0.2.6)
+    libv8 (3.11.8.13)
     method_source (0.8.1)
     mime-types (1.19)
     mongo (1.8.2)
@@ -36,12 +37,13 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
-    rack (1.5.0)
+    rack (1.5.1)
     rainpress (1.0)
     ref (1.0.2)
     rubypants (0.2.0)
     slop (3.4.3)
-    therubyracer (0.11.0)
+    therubyracer (0.11.3)
+      libv8 (~> 3.11.8.12)
       ref
     typogruby (1.0.15)
       rubypants
@@ -66,6 +68,6 @@ DEPENDENCIES
   nokogiri
   pry
   rainpress
-  therubyracer (= 0.11.0)
+  therubyracer
   typogruby
   uglifier
