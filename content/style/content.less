@@ -345,6 +345,21 @@ html.item-404 {
   margin: @12px auto 0;
   padding-bottom: @24px;
 
+  a.permalink {
+    position:     absolute;
+    text-align:   right;
+    width:        @8px;
+    margin-left: -@10px;
+
+    &:link, &:visited {
+      color: darken(@bg, 5%);
+    }
+    &:hover, &:active {
+      color: @mongoGreen;
+      text-decoration: none;
+    }
+  }
+
   h3 {
     margin: @16px 0 @8px;
     color: @black;
