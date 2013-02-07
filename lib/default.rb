@@ -7,7 +7,7 @@ def item_slug(item=nil)
 end
 
 def screenshots
-  @items.select {|i| i.identifier =~ %r{^/screenshots/.} && i[:extension] == 'png' }
+  @items.select {|i| i.identifier =~ %r{^/screenshots/.} && i[:extension] == 'png' }.sort_by { |i| i.identifier  }
 end
 
 def get_genghis_version
