@@ -23,42 +23,90 @@
 
 <ul id="changelog">
   
+    <li id="v2_2_0">
+      <h3>v2.2.0</h3>
+      <p>New!</p>
+
+<ul>
+  <li>Add GridFS upload, drag and drop, navigation and download support.</li>
+  <li>Update to v1.8.x MongoDB driver (Ruby backend).</li>
+</ul>
+
+<p>Bug fixes:</p>
+
+<ul>
+  <li><a href="https://github.com/bobthecow/genghis/issues/64"><a href="https://github.com/bobthecow/genghis/issues/64">Fix #64</a></a> — Allow creating a document with an explicit <code>_id</code>.</li>
+  <li>Handle Backbone weirdness in docs with both <code>_id</code> and <code>id</code> properties.</li>
+  <li>Fix indent levels in documents with empty objects.</li>
+  <li>Stop rejecting all <code>system*</code> collections (Ruby backend) — Thanks @ys.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/71"><a href="https://github.com/bobthecow/genghis/issues/71">Fix #71</a></a> — Handle non-ObjectID DBRefs more gracefully.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/72"><a href="https://github.com/bobthecow/genghis/issues/72">Fix #72</a></a> — Surface server error responses when searching.</li>
+  <li>Surface even more server error messages.</li>
+</ul>
+
+<p>Improvements:</p>
+
+<ul>
+  <li><a href="https://github.com/bobthecow/genghis/issues/41"><a href="https://github.com/bobthecow/genghis/issues/41">Fix #41</a></a> — Add an “updated but not restarted” info message (Ruby backend).</li>
+  <li>Bump Bootstrap, CodeMirror, Esprima, Hogan.js and Hotkeys vendor libraries —
+faster parsing, highlighting and rendering!</li>
+  <li>Update to latest versions of jQuery and Underscore.js.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/64"><a href="https://github.com/bobthecow/genghis/issues/64">Fix #64</a></a> — Show an error message when trying to update an <code>_id</code> property.</li>
+  <li>Surface more error notifications when server goes away and other error cases.</li>
+  <li>Handle parse errors in navbar search box.</li>
+  <li>Remove dependency on Apprise.</li>
+  <li>Update Travis CI config so continuous integration builds are super-ultra-fast!</li>
+  <li>Better optimized CSS selectors — shorter selectors, cleaner inheritance, smaller CSS files.</li>
+  <li>Detect when <code>bson_ext</code> has been installed but <code>genghisapp</code> needs a restart (Ruby backend).</li>
+  <li>Update <code>bson_ext</code> installation nag to include a version number (Ruby backend).</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/73"><a href="https://github.com/bobthecow/genghis/issues/73">Fix #73</a></a> — Authenticate against <code>admin</code> DB if none is specified (Ruby backend).</li>
+  <li>Improve authentication failure error messagine (Ruby backend).</li>
+  <li>Improve encoding handling for non-ascii characters in JavaScript assets.</li>
+  <li>Ensure that all PHP warnings and notices are propagated to the frontend (PHP backend).</li>
+</ul>
+
+
+    </li>
+  
     <li id="v2_1_6">
       <h3>v2.1.6</h3>
       <ul>
-  <li>Better heuristic for guessing document creation date from ObjectId — <a href="https://github.com/bobthecow/genghis/issues/55">See #55</a></li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/55"><a href="https://github.com/bobthecow/genghis/issues/55">Fix #55</a></a> — Better heuristic for guessing document creation date from ObjectId.</li>
   <li>Catch more connection auth errors (Ruby backend).</li>
-  <li>Support authenticating directly against a DB for non-admin users — <a href="https://github.com/bobthecow/genghis/issues/16">See #16</a></li>
-  <li>Make the welcome masthead vertically responsive — <a href="https://github.com/bobthecow/genghis/issues/61">See #61</a></li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/16"><a href="https://github.com/bobthecow/genghis/issues/16">Fix #16</a></a> — Support authenticating directly against a DB for non-admin users.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/61"><a href="https://github.com/bobthecow/genghis/issues/61">Fix #61</a></a> — Make the welcome masthead vertically responsive.</li>
   <li>Source code and asset cleanup.</li>
 </ul>
+
 
     </li>
   
     <li id="v2_1_5">
       <h3>v2.1.5</h3>
       <ul>
-  <li>Prevent connection errors from messing up <code>/servers</code> response (Ruby backend) — <a href="https://github.com/bobthecow/genghis/issues/46">See #46</a></li>
-  <li>Handle <code>connectTimeoutMS</code> and <code>ssl</code> server options (Ruby backend) — <a href="https://github.com/bobthecow/genghis/issues/42">See #42</a></li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/46"><a href="https://github.com/bobthecow/genghis/issues/46">Fix #46</a></a> — Prevent connection errors from messing up <code>/servers</code> response (Ruby backend).</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/42"><a href="https://github.com/bobthecow/genghis/issues/42">Fix #42</a></a> — Handle <code>connectTimeoutMS</code> and <code>ssl</code> server options (Ruby backend).</li>
   <li>Cleaner mobile back buttons in WebKit browsers.</li>
   <li>Disable submit button in paranoid db/collection confirm dialog until name is confirmed.</li>
-  <li>Handle crazy characters in collection names (PHP backend) – <a href="https://github.com/bobthecow/genghis/issues/56">See #56</a></li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/56"><a href="https://github.com/bobthecow/genghis/issues/56">Fix #56</a></a> — Handle crazy characters in collection names (PHP backend).</li>
 </ul>
+
 
     </li>
   
     <li id="v2_1_4">
       <h3>v2.1.4</h3>
       <ul>
-  <li>Add warning messages for <code>magic_quotes_gpc</code> and <code>magic_quotes_runtime</code> — <a href="https://github.com/bobthecow/genghis/issues/49">See #49</a>.</li>
-  <li>Work around PHP driver issue with non-scalar ids — <a href="https://github.com/bobthecow/genghis/issues/51">See #51</a>.</li>
-  <li>Fix error handling documents with <code>null</code> identifiers — <a href="https://github.com/bobthecow/genghis/issues/51">See #51</a>.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/49"><a href="https://github.com/bobthecow/genghis/issues/49">Fix #49</a></a> — Add warning messages for <code>magic_quotes_gpc</code> and <code>magic_quotes_runtime</code>.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/51"><a href="https://github.com/bobthecow/genghis/issues/51">Fix #51</a></a> — Work around PHP driver issue with non-scalar ids.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/51"><a href="https://github.com/bobthecow/genghis/issues/51">Fix #51</a></a> — Fix error handling documents with <code>null</code> identifiers.</li>
   <li>Make document headers prettier for non-string and non-ObjectId identifiers.</li>
   <li>Handle URI decoding and routing for non-string and non-ObjectId identifiers in some browsers.</li>
-  <li>Saner connection timeouts — <a href="https://github.com/bobthecow/genghis/issues/44">See #44</a>.</li>
-  <li>Fix “add server” regression in PHP — <a href="https://github.com/bobthecow/genghis/issues/50">See #50</a>.</li>
-  <li>Never daemonize <code>genghisapp</code> for Windows users — <a href="https://github.com/bobthecow/genghis/issues/54">See #54</a>.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/44"><a href="https://github.com/bobthecow/genghis/issues/44">Fix #44</a></a> — Saner connection timeouts.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/50"><a href="https://github.com/bobthecow/genghis/issues/50">Fix #50</a></a> — Fix “add server” regression in PHP.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/54"><a href="https://github.com/bobthecow/genghis/issues/54">Fix #54</a></a> — Never daemonize <code>genghisapp</code> for Windows users.</li>
 </ul>
+
 
     </li>
   
@@ -67,9 +115,10 @@
       <ul>
   <li>Optical correction for masthead background image aspect.</li>
   <li>Use Adobe’s beautiful Source Code Pro rather than relying on the default system monospace.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/48">Fix #48</a> — ActiveRecord messes up DateTime#to_time.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/52">Fix #52</a> — MongoDate parsing regression in PHP.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/48"><a href="https://github.com/bobthecow/genghis/issues/48">Fix #48</a></a> — ActiveRecord messes up <code>DateTime#to_time</code>.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/52"><a href="https://github.com/bobthecow/genghis/issues/52">Fix #52</a></a> — MongoDate parsing regression in PHP.</li>
 </ul>
+
 
     </li>
   
@@ -86,19 +135,20 @@
     <li id="v2_1_1">
       <h3>v2.1.1</h3>
       <ul>
-  <li><a href="https://github.com/bobthecow/genghis/issues/38">Fix #38</a> — JSON rendering weirdness with empty array properties.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/40">Fix #40</a> — Ruby 1.8.7 regression.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/38"><a href="https://github.com/bobthecow/genghis/issues/38">Fix #38</a></a> — JSON rendering weirdness with empty array properties.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/40"><a href="https://github.com/bobthecow/genghis/issues/40">Fix #40</a></a> — Ruby 1.8.7 regression.</li>
 </ul>
+
 
     </li>
   
     <li id="v2_1">
       <h3>v2.1</h3>
       <ul>
-  <li><a href="https://github.com/bobthecow/genghis/issues/28">Fix #28</a> — Handle BSON BinData properly in documents and ids.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/33">Fix #33</a> — Remove unexpected collapsed document representation in edit mode.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/32">Fix #32</a> — No more mixed-content warning when Genghis is running over SSL.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/35">Fix #35</a> — No more “Add Server” fail in Ruby.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/28"><a href="https://github.com/bobthecow/genghis/issues/28">Fix #28</a></a> — Handle BSON BinData properly in documents and ids.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/33"><a href="https://github.com/bobthecow/genghis/issues/33">Fix #33</a></a> — Remove unexpected collapsed document representation in edit mode.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/32"><a href="https://github.com/bobthecow/genghis/issues/32">Fix #32</a></a> — No more mixed-content warning when Genghis is running over SSL.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/35"><a href="https://github.com/bobthecow/genghis/issues/35">Fix #35</a></a> — No more “Add Server” fail in Ruby.</li>
   <li>Fix — Handle connection auth errors more gracefully.</li>
   <li>Fix — Query bug when running under PHP 5.4 SAPI CLI server.</li>
   <li>Add ObjectId timestamps to document headers.</li>
@@ -110,23 +160,26 @@
   <li>Added <code>CONTRIBUTING.markdown</code>.</li>
 </ul>
 
+
     </li>
   
     <li id="v2_0_2">
       <h3>v2.0.2</h3>
       <ul>
-  <li><a href="https://github.com/bobthecow/genghis/issues/29">Fix #29</a> — Don’t throw unexpected unary expression error when parsing negative numbers.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/22">Fix #22</a> — Handle high badge counts on nav dropdown.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/30">Fix #30</a> — Weird content clipping when editing really long documents.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/29"><a href="https://github.com/bobthecow/genghis/issues/29">Fix #29</a></a> — Don’t throw unexpected unary expression error when parsing negative numbers.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/22"><a href="https://github.com/bobthecow/genghis/issues/22">Fix #22</a></a> — Handle high badge counts on nav dropdown.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/30"><a href="https://github.com/bobthecow/genghis/issues/30">Fix #30</a></a> — Weird content clipping when editing really long documents.</li>
 </ul>
+
 
     </li>
   
     <li id="v2_0_1">
       <h3>v2.0.1</h3>
       <ul>
-  <li><a href="https://github.com/bobthecow/genghis/issues/26">Fix #26</a> — Don’t double-encode HTML entities in JSON output.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/26"><a href="https://github.com/bobthecow/genghis/issues/26">Fix #26</a></a> — Don’t double-encode HTML entities in JSON output.</li>
 </ul>
+
 
     </li>
   
@@ -182,18 +235,19 @@
 <p>And a handful of bug fixes:</p>
 
 <ul>
-  <li><a href="https://github.com/bobthecow/genghis/issues/19">Fix #19</a> — Only implicitly wrap MongoIds if they’re 24 character hex strings.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/20">Fix #20</a> — Support creating and editing documents with an <code>attributes</code> property.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/19"><a href="https://github.com/bobthecow/genghis/issues/19">Fix #19</a></a> — Only implicitly wrap MongoIds if they’re 24 character hex strings.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/20"><a href="https://github.com/bobthecow/genghis/issues/20">Fix #20</a></a> — Support creating and editing documents with an <code>attributes</code> property.</li>
   <li>Fix output glitches when displaying a brand new document immediately after an existing document.</li>
-  <li>Fix – possible JavaScript error when adding a new collection.</li>
-  <li>Fix – handful of rare (and relatively benign) error messages.</li>
+  <li>Fix — possible JavaScript error when adding a new collection.</li>
+  <li>Fix — handful of rare (and relatively benign) error messages.</li>
   <li>Fix — malformed server DSN could prevent servers list from rendering.</li>
   <li>Fix — rare bug where properties with a specific structure might be mistaken for ObjectIds or Dates.</li>
   <li>Fix — no longer recreates missing dbs and collections on GET requests.</li>
   <li>Fix — all sorts of things now 404 if they’re missing, rather than rendering an empty page.</li>
-  <li>Fix — assorted issues with running in subdirectories, and under nginx.</li>
+  <li>Fix — assorted issues with running in subdirectories, and under nginx.</li>
   <li>Improve error handling in a couple of places.</li>
 </ul>
+
 
     </li>
   
@@ -267,7 +321,7 @@
   
     <li id="v1_0_1">
       <h3>v1.0.1</h3>
-      <p>Fix an E_STRICT error in asset mime-type guessing.</p>
+      <p>Fix an <code>E_STRICT</code> error in asset mime-type guessing.</p>
 
     </li>
   
