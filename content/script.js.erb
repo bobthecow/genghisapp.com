@@ -1,7 +1,7 @@
-<%= @items.find{|i| i.identifier == '/script/jquery/'}.compiled_content %>
-<%= @items.find{|i| i.identifier == '/script/jquery-shuffle/'}.compiled_content %>
-<%= @items.find{|i| i.identifier == '/script/socialite/'}.compiled_content %>
-<%= @items.find{|i| i.identifier == '/script/socialite-github/'}.compiled_content %>
+<%= @items['/script/jquery/'].compiled_content           %>
+<%= @items['/script/jquery-shuffle/'].compiled_content   %>
+<%= @items['/script/socialite/'].compiled_content        %>
+<%= @items['/script/socialite-github/'].compiled_content %>
 
 jQuery(function($) {
   // shuffle the screenshots
