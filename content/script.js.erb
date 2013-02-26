@@ -1,11 +1,17 @@
 <%= @items['/script/jquery/'].compiled_content           %>
 <%= @items['/script/jquery-shuffle/'].compiled_content   %>
+<%= @items['/script/jquery-lazyload/'].compiled_content  %>
 <%= @items['/script/socialite/'].compiled_content        %>
 <%= @items['/script/socialite-github/'].compiled_content %>
 
 jQuery(function($) {
+  $('html').addClass('js');
+
   // shuffle the screenshots
   $('#screenshots').shuffle();
+
+  // lazy load the screenshots
+  $('img.lazy').lazyload();
 
   // load the sellout buttons
   Socialite.load($('#share'));

@@ -24,3 +24,7 @@ end
 def version_hash(version)
   version.gsub(/[^\w]+/, '_').sub(/^v?/, 'v')
 end
+
+def mobile?(item)
+  item.identifier.include? '/mobile/'
+end

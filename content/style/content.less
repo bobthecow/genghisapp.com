@@ -243,7 +243,8 @@ a.fork-me {
     margin:  @12px;
     padding: 0;
     display: inline-block;
-    width: 240*@px;
+    width:  240*@px;
+    height: 192*@px;
     .border-radius(@3px);
     .box-shadow(0 @8px @8px rgba(0,0,0,.75), 0 0 @24px rgba(0,0,0,.5));
     border-top: 1px solid #AAA;
@@ -279,10 +280,19 @@ a.fork-me {
       .border-bottom-radius(@2px);
       display: inline-block;
       max-width: 100%;
+
+      &.lazy {
+        display: none;
+        width: 100%;
+        html.js & {
+          display: inline-block;
+        }
+      }
     }
 
     &.mobile {
-      width: 105*@px;
+      width:  105*@px;
+      height: 160*@px;
       .border-radius(@16px);
       padding-bottom: @32px;
 

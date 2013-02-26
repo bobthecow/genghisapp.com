@@ -15,6 +15,9 @@ title: Genghis, the single-file MongoDB admin app.
 
 <ul id="screenshots">
   <% screenshots.each do |screen| %>
-    <li<% if screen.identifier.include? "/mobile/" %> class="mobile"<% end %>><img src="<%= screen.path %>"></li>
+    <li<% if mobile? screen %> class="mobile"<% end %>>
+      <img class="lazy" src="/grey<% if mobile? screen %>-mobile<% end %>.png" data-original="<%= screen.path %>">
+      <noscript><img src="<%= screen.path %>"></noscript>
+    </li>
   <% end %>
 </ul>
