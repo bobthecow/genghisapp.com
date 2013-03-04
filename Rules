@@ -55,7 +55,6 @@ end
 
 compile '/changelog/*' do
   filter :kramdown
-  filter :github_issue_links, project: 'bobthecow/genghis'
 end
 route '/changelog/*' do; end
 
