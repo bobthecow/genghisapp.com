@@ -5,6 +5,8 @@ preprocess do
 end
 
 passthrough '/CNAME/'
+passthrough '/humans/'
+passthrough '/robots/'
 
 compile '/script/' do
   filter :erb
