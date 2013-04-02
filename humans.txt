@@ -1,0 +1,9 @@
+/* ME */
+
+  Genghis is a single-file MongoDB admin app by Justin Hileman.
+  You can find it at https://github.com/bobthecow/genghis
+
+/* SITE */
+
+  This site is powered by Nanoc, Git and Sublime Text.
+  You should try 'em all.
