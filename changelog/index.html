@@ -23,15 +23,27 @@
 
 <ul id="changelog">
   
+    <li id="v2_3_1">
+      <h3>v2.3.1</h3>
+      <ul>
+  <li><a href="https://github.com/bobthecow/genghis/issues/93">Fix #93</a> — Skip <code>bson_ext</code> and <code>json</code> checks for JRuby, et. al.</li>
+  <li>Use an explicit ISO date string when saving ISODate values.</li>
+  <li>Update to the latest Backbone, Underscore, CodeMirror, jQuery, jQuery hoverIntent and Mousetrap library versions.</li>
+  <li>Switch to Rob Garrison’s fork of tablesorter.</li>
+</ul>
+
+
+    </li>
+  
     <li id="v2_3_0">
       <h3>v2.3.0</h3>
       <ul>
-  <li><a href="https://github.com/bobthecow/genghis/issues/69">Fix #69</a>, <a href="https://github.com/bobthecow/genghis/issues/74">#74</a> , <a href="https://github.com/bobthecow/genghis/issues/84">#84</a> and <a href="https://github.com/bobthecow/genghis/issues/91">#91</a> — Fix errors authenticating against a single database.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/69">Fix #69</a>, <a href="https://github.com/bobthecow/genghis/issues/74">#74</a> , <a href="https://github.com/bobthecow/genghis/issues/84">#84</a> and <a href="https://github.com/bobthecow/genghis/issues/91">#91</a> — Fix errors authenticating against a single database.</li>
   <li>Add detailed database and collection size stats.</li>
   <li>Friendlier “human” size rounding.</li>
   <li><a href="https://github.com/bobthecow/genghis/issues/89">Fix #89</a> — Improve handling of databases with invalid names.</li>
   <li><a href="https://github.com/bobthecow/genghis/issues/90">Fix #90</a> — Fix error loading server list after adding a malformed server DSN (PHP backend).</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/81">Fix #81</a> — Suppress dependency version warnings for (really) old versions of rubygems.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/81">Fix #81</a> — Suppress dependency version warnings for (really) old versions of rubygems.</li>
   <li>Fix various and sundry compile errors and edge cases.</li>
   <li>Bump Bootstrap and Mousetrap library versions.</li>
 </ul>
@@ -46,7 +58,7 @@
   <li>Pre-fill default <code>fs</code> GridFS collection name.</li>
   <li>Add a hotkey for creating a new GridFS collection.</li>
   <li>Improve “create” user experience in tabular views.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/79">Fix #79</a> — Improve hotkey handling.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/79">Fix #79</a> — Improve hotkey handling.</li>
   <li>Fix disappearing line numbers in editors after using big search box (let defaults stay default).</li>
   <li>Housekeeping.</li>
 </ul>
@@ -79,12 +91,12 @@ level (Ruby backend).</li>
 <p>Bug fixes:</p>
 
 <ul>
-  <li><a href="https://github.com/bobthecow/genghis/issues/64">Fix #64</a> — Allow creating a document with an explicit <code>_id</code>.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/64">Fix #64</a> — Allow creating a document with an explicit <code>_id</code>.</li>
   <li>Handle Backbone weirdness in docs with both <code>_id</code> and <code>id</code> properties.</li>
   <li>Fix indent levels in documents with empty objects.</li>
   <li>Stop rejecting all <code>system*</code> collections (Ruby backend) — Thanks @ys.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/71">Fix #71</a> — Handle non-ObjectID DBRefs more gracefully.</li>
-  <li><a href="https://github.com/bobthecow/genghis/issues/72">Fix #72</a> — Surface server error responses when searching.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/71">Fix #71</a> — Handle non-ObjectID DBRefs more gracefully.</li>
+  <li><a href="https://github.com/bobthecow/genghis/issues/72">Fix #72</a> — Surface server error responses when searching.</li>
   <li>Surface even more server error messages.</li>
 </ul>
 
@@ -193,7 +205,7 @@ faster parsing, highlighting and rendering!</li>
   <li><a href="https://github.com/bobthecow/genghis/issues/33">Fix #33</a> — Remove unexpected collapsed document representation in edit mode.</li>
   <li><a href="https://github.com/bobthecow/genghis/issues/32">Fix #32</a> — No more mixed-content warning when Genghis is running over SSL.</li>
   <li><a href="https://github.com/bobthecow/genghis/issues/35">Fix #35</a> — No more “Add Server” fail in Ruby.</li>
-  <li>Fix — Handle connection auth errors more gracefully.</li>
+  <li>Fix — Handle connection auth errors more gracefully.</li>
   <li>Fix — Query bug when running under PHP 5.4 SAPI CLI server.</li>
   <li>Add ObjectId timestamps to document headers.</li>
   <li>Add a sanity check for PHP <code>date.timezone</code> settings.</li>
@@ -244,7 +256,7 @@ faster parsing, highlighting and rendering!</li>
 
 <ul>
   <li>Add this CHANGELOG. Meta.</li>
-  <li>Genghis now has a more refined visual style — greeeeen!</li>
+  <li>Genghis now has a more refined visual style — greeeeen!</li>
   <li>More responsive design (check it in a really small window!)</li>
   <li>Epic document parsing and rendering overhaul:
     <ul>
