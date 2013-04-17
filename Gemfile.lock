@@ -19,7 +19,7 @@ GEM
     i18n (0.6.4)
     json (1.7.7)
     kramdown (1.0.1)
-    less (2.3.1)
+    less (2.3.2)
       commonjs (~> 0.2.6)
     libv8 (3.11.8.17)
     method_source (0.8.1)
